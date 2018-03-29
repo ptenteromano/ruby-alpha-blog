@@ -7,9 +7,14 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  
+  <!--this will show up on every view of application-->
   <body>
+    <%= render 'layouts/navigation' %>  
     <%= render 'layouts/messages' %>
-    <%= yield %>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
