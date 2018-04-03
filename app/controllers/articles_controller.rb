@@ -14,6 +14,7 @@ class ArticlesController < ApplicationController
   
   def create
     @article = Article.new(article_params)
+    @article.user = User.first              # temporary 
     if @article.save
       # flast shows on first redirect
       flash[:success] = "Article was successfully created"
