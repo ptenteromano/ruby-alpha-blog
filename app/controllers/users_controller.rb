@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  
+  def index
+    @userList = User.all
+  end
 
   def new
     @user = User.new
