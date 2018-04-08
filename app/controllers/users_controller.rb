@@ -12,9 +12,10 @@ class UsersController < ApplicationController
   
   def create
     @user = User.new(user_params)
+    # auto sign in immediately after sign up
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = "Welcome to the alpha blog #{@user.username}"
+      flash[:success] = "Welcome to Build It Blog #{@user.username}"
       redirect_to user_path(@user)
     else
       render 'new'    # will display errors on re-display
@@ -54,3 +55,4 @@ class UsersController < ApplicationController
   end
   
 end
+

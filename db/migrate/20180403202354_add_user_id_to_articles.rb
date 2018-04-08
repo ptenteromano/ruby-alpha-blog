@@ -1,5 +1,6 @@
 class AddUserIdToArticles < ActiveRecord::Migration[5.1]
   def change
-    add_column :articles, :user_id, :integer  # foreign key is integer type
+    # foreign key user_id is an integer type
+    add_column :articles, :user_id, :integer  
   end
 end
