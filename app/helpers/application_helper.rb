@@ -1,5 +1,6 @@
 module ApplicationHelper
-  
+
+  # this is for user avatars imported from Gravatar   
   def gravatar_for(user, options = { size: 80 })
     gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     size = options[:size]
