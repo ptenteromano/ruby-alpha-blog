@@ -78,6 +78,26 @@ h5 {
   margin-bottom: -25px;
 }
 
+//  Circle heading of about page 
+.about {
+    background-color: oldlace;
+    height: 140px;
+    width: 140px;
+    border-radius: 70px;
+    border: inset brown;
+    margin: auto;
+}
+
+.about h6 {
+  text-align: center;
+  margin: 2px;
+  font-weight: bold;
+}
+
+.about .top {
+  margin-top: 36px;
+}
+
 .footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -98,3 +118,5 @@ h5 {
   float: left;
   margin-left: 15px;
 }
+
+
