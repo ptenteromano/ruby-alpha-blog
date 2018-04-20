@@ -19,21 +19,33 @@
     <p>This app was built with Ruby on Rails. For those not familiar, Rails uses HTML with embedded Ruby
     to get the job done. Rails makes things easy by quickly creating the scaffolding for a database schema.</p>
     
-    <p>From there, you can run migrations on your database to update the attributes and design for what you want
+    <p>From there, you can run migrations on the database to update the attributes and design for what you want
     to accomplish. Moreover, Rails' Model View Controller (MVC) method makes building and programming a functioning
     web application simple and fun.</p>
     
-    <p>The styling belongs mostly to Bootstrap, although I use the custom.css.scss file rather often when BS doesn't 
+    <p>The styling belongs mostly to Bootstrap, although I use the custom.css.scss file rather often when Bootstrap doesn't 
     play nice. The mixture of Rails, a CRUD style database, and the intuitive styling techniques works well together.</p>
     
     <p>The purpose here was to build something on my own time, learn something new, and get ahead of the game. I want
-    to become a professional with this, and it won't happen overnight. This is an early project of mine but I plan
+    to become a professional at this, and it won't happen overnight. This is an early project of mine but I plan
     on getting better and better. Thanks for joining.</p>
     
     <p>There are links on the navigation bar at the top (a bootstrap nav-bar), and I've put them all in a drop-down.</p>
     
     <p>Enjoy the ride!</br>-Phil</p>
-    <h4 align="center"><%= link_to 'Home', root_path %> </h4>
+    
+    <div align="center">
+      <ul class="about-menu">
+        <li><h5> <%= link_to 'Home', root_path %> </h5></li>
+        <% if logged_in? %>
+          <li><h5><%= link_to "View your profile", user_path(current_user) %></h5></li>
+          <li><h5><%= link_to "Create Article", new_article_path %></h5></li>
+        <% else %>
+          <li><h5> <%= link_to 'Sign up', signup_path %> </h5></li>
+        <% end %>
+      </ul>
+    </div>
+
   </div>
 </div>
 
