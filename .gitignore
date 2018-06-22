@@ -27,3 +27,8 @@
 /.crt
 /.pass
 /.pass.key
+
+**/.idea
+.idea/*
+/.idea
+
