@@ -19,10 +19,10 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = current_user
     if @article.save
-      # flast shows on first redirect
+      # flash shows on first redirect
       flash[:success] = "Article was successfully created"
       redirect_to article_path(@article)
-    else      # validations failed 
+    else      # validations fail@ed
       # render the new template
       render 'new'    
     end
@@ -47,13 +47,13 @@ class ArticlesController < ApplicationController
   end
   
   private
-    def find_article
-      @article = Article.find(params[:id])
-    end
-  
-    def article_params
-      params.require(:article).permit(:title, :description)
-    end
+  def find_article
+    @article = Article.find(params[:id])
+  end
+
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end
     
   def require_same_user
     # error if not the article creator and not an admin
